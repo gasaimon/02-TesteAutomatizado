@@ -42,7 +42,7 @@ function normalizarClasse(texto) {
  * @returns {number} Média aritmética das notas
  */
 function calcularMedia(nota1, nota2, nota3) {
-    return (nota1 + nota2) / 2;
+    return (nota1 + nota2 + nota3) / 3;
 }
 
 /**
@@ -172,9 +172,7 @@ function atualizarEstatisticas() {
     document.getElementById('stat-reprovados').textContent = reprovados;
 }
 
-/**
- * Exclui um aluno pelo ID.
- */
+
 function excluirAluno(id) {
     alunos = alunos.filter(a => a.id !== id);
     atualizarTabela(document.getElementById('busca').value);
@@ -182,9 +180,7 @@ function excluirAluno(id) {
     exibirMensagem('Aluno removido com sucesso.', 'sucesso');
 }
 
-/**
- * Limpa todos os alunos cadastrados.
- */
+
 function limparTudo() {
     if (alunos.length === 0) return;
 
@@ -197,9 +193,7 @@ function limparTudo() {
     }
 }
 
-/**
- * Limpa os campos do formulário.
- */
+
 function limparFormulario() {
     document.getElementById('form-cadastro').reset();
     document.getElementById('nome').focus();
